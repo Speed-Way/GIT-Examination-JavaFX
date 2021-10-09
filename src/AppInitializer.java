@@ -31,6 +31,7 @@ public class AppInitializer extends Application {
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         primaryStage.setScene(scene);
+
         primaryStage.show();
     }
 }

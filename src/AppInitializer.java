@@ -27,7 +27,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL resource = this.getClass().getResource("view/CustomerForm.fxml");
+        URL resource = this.getClass().getResource("view/ItemForm.fxml");
 
         Parent load = FXMLLoader.load(resource);
 

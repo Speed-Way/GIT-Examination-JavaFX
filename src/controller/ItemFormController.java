@@ -10,7 +10,7 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import db.DBConnection;
-import dto.ItemDTO;
+import dto.CustomerDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,7 +28,7 @@ import java.util.List;
  * @author Pasan Abeysekara <pasan.lahiru123@gmail.com> (www.pasanabeysekara.com)
  * @since 10/9/2021
  */
-public class CustomerFormController {
+public class ItemFormController {
     public JFXTextField txtId;
     public JFXTextField txtName;
     public JFXTextField txtAddress;
@@ -67,9 +67,9 @@ public class CustomerFormController {
     private void loadAllCustomers() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = DBConnection.getInstance().getConnection().prepareStatement("SELECT * FROM Customer").executeQuery();
 
-        List<ItemDTO> customerDTOS = new ArrayList<>();
+        List<CustomerDTO> customerDTOS = new ArrayList<>();
         while (resultSet.next()){
-            customerDTOS.add(new ItemDTO(
+            customerDTOS.add(new CustomerDTO(
                             resultSet.getString(1),
                             resultSet.getString(2),
                             resultSet.getString(3),
@@ -80,7 +80,7 @@ public class CustomerFormController {
 
         ObservableList<CustomerTM> tmObservableList = FXCollections.observableArrayList();
 
-        for (ItemDTO dto: customerDTOS) {
+        for (CustomerDTO dto: customerDTOS) {
             Button btn= new Button("Delete");
 
             tmObservableList.add(
@@ -111,7 +111,7 @@ public class CustomerFormController {
     public void saveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         if (btnSave.getText().equalsIgnoreCase("Save")){
             //Save
-            ItemDTO dto = new ItemDTO(
+            CustomerDTO dto = new CustomerDTO(
                     txtId.getText(),
                     txtName.getText(),
                     txtAddress.getText(),

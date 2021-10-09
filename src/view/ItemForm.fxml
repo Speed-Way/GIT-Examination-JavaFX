@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!--&lt;!&ndash;-->
+<!--  ~ /*-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--  ~  *  Copyright (c) Speed Way. All rights reserved.-->
+<!--  ~  *  Licensed under the MIT License. See License.txt in the project root for license information.-->
+<!--  ~  *&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;*/-->
+<!--  &ndash;&gt;-->
+
+<AnchorPane prefHeight="528.0" prefWidth="724.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemFormController">
+    <children>
+        <Text fontSmoothingType="LCD" layoutX="297.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Form" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Text>
+        <Separator layoutX="10.0" layoutY="67.0" prefHeight="3.0" prefWidth="705.0" />
+        <JFXTextField fx:id="txtId" layoutX="26.0" layoutY="122.0" prefHeight="25.0" prefWidth="85.0" promptText="Customer ID" />
+        <JFXTextField fx:id="txtName" layoutX="133.0" layoutY="122.0" prefHeight="25.0" prefWidth="164.0" promptText="Name" />
+        <JFXTextField fx:id="txtAddress" layoutX="329.0" layoutY="122.0" prefHeight="25.0" prefWidth="213.0" promptText="Address" />
+        <JFXTextField fx:id="txtSalary" layoutX="560.0" layoutY="122.0" prefHeight="25.0" prefWidth="135.0" promptText="Salary" />
+        <TextField fx:id="txtSearch" layoutX="26.0" layoutY="180.0" prefHeight="25.0" prefWidth="529.0" promptText="Search" />
+        <JFXButton fx:id="btnSave" layoutX="602.0" layoutY="180.0" onAction="#saveOnAction" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: yellow;" text="Save" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnNew" layoutX="602.0" layoutY="82.0" onAction="#newOnAction" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: Green;" text="New" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <TableView fx:id="tblCustomer" layoutX="26.0" layoutY="230.0" prefHeight="268.0" prefWidth="677.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="192.0" text="Name" />
+                <TableColumn fx:id="colAddress" prefWidth="203.0" text="Address" />
+                <TableColumn fx:id="colSalary" prefWidth="116.0" text="Salary" />
+                <TableColumn fx:id="colOperator" prefWidth="86.0" text="Operator" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
